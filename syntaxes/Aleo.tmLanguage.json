@@ -1,0 +1,85 @@
+{
+  "name": "Aleo",
+  "scopeName": "source.aleo",
+  "scope": "source.aleo",
+  "fileTypes": ["aleo"],
+  "extension": ["aleo"],
+  "patterns": [
+    {
+      "include": "#block_comment"
+    },
+    {
+      "include": "#line_comment"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#finalize"
+    },
+    {
+      "include": "#qualifiers"
+    },
+    {
+      "include": "#visibility"
+    },
+    {
+      "include": "#instructions"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "name": "keyword.control.aleo",
+      "match": "\\b(function|program|as|by|interface|closure|into|import)\\b"
+    },
+    "finalize": {
+      "name": "finalize.aleo",
+      "match": "\\b(finalize|mapping|increment|decrement)\\b"
+    },
+    "qualifiers": {
+      "name": "qualifiers.aleo",
+      "match": "\\(|\\)"
+    },
+    "visibility": {
+      "name": "visibility.aleo",
+      "match": "\\b(constant|public|private|record|aleo)\\b"
+    },
+    "instructions": {
+      "name": "instruction.aleo",
+      "match": "\\b(abs\\.w|abs|add\\.w|add|and|assert\\.eq|assert\\.neq|call|cast|commit\\.bhp256|commit\\.bhp512|commit\\.bhp768|commit\\.bhp1024|commit\\.ped64|commit\\.ped128|div\\.w|div|double|gt|gte|hash\\.bhp256|hash\\.bhp512|hash\\.bhp768|hash\\.bhp1024|hash\\.ped64|hash\\.ped128|hash\\.psd2|hash\\.psd4|hash\\.psd8|inv|input|is\\.eq|is\\.neq|lt|lte|key|mod|mul\\.w|mul|nand|neg|nor|not|or|output|pow\\.w|pow|rem\\.w|rem|shl\\.w|shl|shr\\.w|srh|sqrt|sub\\.w|sub|square|ternary|value|xor)\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.aleo",
+      "match": "-?[0-9.]+"
+    },
+    "strings": {
+      "name": "string.quoted.double.aleo",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.aleo",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "block_comment": {
+      "comment": "Block comment",
+      "name": "punctuation.definition.block.comment.aleo",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    "line_comment": {
+      "comment": "Single-line comment",
+      "name": "punctuation.definition.inline.comment.aleo",
+      "begin": "//",
+      "end": "$"
+    }
+  }
+}

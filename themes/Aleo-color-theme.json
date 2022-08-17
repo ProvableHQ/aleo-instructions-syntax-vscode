@@ -1,0 +1,85 @@
+{
+	"name": "Aleo",
+	"colors": {
+		"editor.background": "#222222",
+		"editor.foreground": "#eeeeee",
+		"activityBarBadge.background": "#007acc",
+		"sideBarTitle.foreground": "#bbbbbb"
+	},
+	"tokenColors": [
+		{
+			"name": "Aleo Comment",
+			"scope": [
+				"punctuation.definition.block.comment.aleo",
+				"punctuation.definition.inline.comment.aleo"
+			],
+			"settings": {
+				"foreground": "#888888"
+			}
+		},
+		{
+			"name": "Aleo Keyword",
+			"scope": [
+				"keyword.control.aleo"
+			],
+			"settings": {
+				"foreground": "#F92672"
+			}
+		},
+		{
+			"name": "Aleo Finalize",
+			"scope": [
+				"finalize.aleo",
+			],
+			"settings": {
+				"foreground": "#AE81FF"
+			}
+		},
+		{
+			"name": "Aleo Qualifiers",
+			"scope": [
+				"qualifiers.aleo",
+			],
+			"settings": {
+				"foreground": "#FD971F"
+			}
+		},
+		{
+			"name": "Aleo Visibility",
+			"scope": [
+				"visibility.aleo"
+			],
+			"settings": {
+				"foreground": "#66D9EF"
+			}
+		},
+		{
+			"name": "Aleo Instruction",
+			"scope": [
+				"instruction.aleo"
+			],
+			"settings": {
+				"foreground": "#A6E22E"
+			}
+		},
+		{
+			"name": "Aleo Number",
+			"scope": [
+				"constant.numeric.aleo"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#AE81FF"
+			}
+		},
+		{
+			"name": "Aleo String",
+			"scope": [
+				"string.quoted.double.aleo"
+			],
+			"settings": {
+				"foreground": "#E6DB74"
+			}
+		},
+	]
+}
