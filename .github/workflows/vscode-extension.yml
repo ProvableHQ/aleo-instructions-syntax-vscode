@@ -30,20 +30,12 @@ jobs:
           out_dir: vscode-extension/next
       
       # Production
-      - name: Parse version number
-        id: parse_version
-        run: |
-          echo "::set-output name=version::$(jq .packages[0].releases[0].version ./package-settings/aleo-instructions.json)"
-          echo "::set-output name=url_version::$(jq .packages[0].releases[0].url ./package-settings/aleo-instructions.json | grep -P '(\d+.\d+.\d+)' -o)"
-      - name: Check release version
-        if: startsWith(github.ref, 'refs/tags/') && ((github.ref_name != steps.parse_version.outputs.version) || (github.ref_name != steps.parse_version.outputs.url_version))
-        run: exit 1
       - name: Upload package to latest folder
         if: startsWith(github.ref, 'refs/tags/')
         uses: BetaHuhn/do-spaces-action@v2
         with:
           access_key: ${{ secrets.SPACES_KEY}}
-          secret_key: ${{ secrets.SECRET_KEY }}
+          secret_key: ${{ secrets.SPACES_SECRET }}
           space_name: ${{ secrets.SPACE_NAME }}
           space_region: ${{ secrets.SPACE_REGION }}
           source: aleo-instructions-syntax.vsix
@@ -53,11 +45,11 @@ jobs:
         uses: BetaHuhn/do-spaces-action@v2
         with:
           access_key: ${{ secrets.SPACES_KEY}}
-          secret_key: ${{ secrets.SECRET_KEY }}
+          secret_key: ${{ secrets.SPACES_SECRET }}
           space_name: ${{ secrets.SPACE_NAME }}
           space_region: ${{ secrets.SPACE_REGION }}
           source: aleo-instructions-syntax.vsix
           out_dir: vscode-extension/${{steps.parse_version.outputs.version}}
       - name: Publish to market
         if: startsWith(github.ref, 'refs/tags/')
-        run: yarn publish
+        run: yarn publish-to-market

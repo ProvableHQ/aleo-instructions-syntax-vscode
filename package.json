@@ -2,7 +2,7 @@
   "name": "aleo-instructions-syntax",
   "displayName": "Aleo instructions syntax",
   "description": "Aleo instructions syntax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "aleohq",
   "publisher": "aleohq",
   "preview": false,
@@ -80,7 +80,7 @@
   },
   "homepage": "https://www.aleo.org/",
   "scripts": {
-    "publish": "vsce publish --yarn -p $VSCODE_PUBLISHER_TOKEN --no-git-tag-version --packagePath aleo-instructions-syntax.vsix",
+    "publish-to-market": "vsce publish --yarn -p $VSCODE_PUBLISHER_TOKEN --no-git-tag-version --packagePath aleo-instructions-syntax.vsix",
     "package": "vsce package --yarn -o aleo-instructions-syntax.vsix"
   },
   "devDependencies": {
