@@ -1,14 +1,26 @@
 {
-  "name": "aleo",
+  "name": "aleo-instructions-syntax",
   "displayName": "Aleo instructions syntax",
   "description": "Aleo instructions syntax",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "author": "aleohq",
+  "publisher": "aleohq",
+  "preview": false,
   "engines": {
     "vscode": "^1.70.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Themes"
   ],
+  "keywords": [
+    "aleo",
+    "leo"
+  ],
+  "galleryBanner": {
+    "color": "#931CFF",
+    "theme": "dark"
+  },
   "contributes": {
     "languages": [
       {
@@ -32,10 +44,46 @@
     ],
     "themes": [
       {
-        "label": "Aleo",
+        "label": "Aleo instructions syntax",
         "uiTheme": "vs-dark",
         "path": "./themes/Aleo-color-theme.json"
       }
     ]
+  },
+  "badges": [
+    {
+      "url": "https://img.shields.io/twitter/follow/AleoHQ?style=social",
+      "href": "https://twitter.com/AleoHQ",
+      "description": "Twitter"
+    },
+    {
+      "url": "https://img.shields.io/discord/700454073459015690?logo=discord",
+      "href": "https://discord.gg/5v2ynrw2ds",
+      "description": "Discord"
+    }
+  ],
+  "markdown": "github",
+  "qna": "marketplace",
+  "extensionPack": [],
+  "extensionDependencies": [],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "icon": "icons/leo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AleoHQ/aleo-instructions-syntax-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AleoHQ/aleo-instructions-syntax-vscode/issues"
+  },
+  "homepage": "https://www.aleo.org/",
+  "scripts": {
+    "publish": "vsce publish --yarn -p $VSCODE_PUBLISHER_TOKEN --no-git-tag-version --packagePath aleo-instructions-syntax.vsix",
+    "package": "vsce package --yarn -o aleo-instructions-syntax.vsix"
+  },
+  "devDependencies": {
+    "vsce": "^2.10.2"
   }
 }
